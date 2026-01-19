@@ -6,16 +6,22 @@ Este é um projeto de lista de tarefas (To-Do List) desenvolvido com HTML, CSS e
 - Visualize as tarefas listadas dinamicamente na página.
 - Marque tarefas como concluídas.
 - Exclua tarefas individualmente.
-- Mantenha persistência de dados no navegador usando localStorage.
+- Persistência de dados no navegador usando localStorage.
 
 O principal objetivo deste projeto é aprender e aplicar fundamentos de desenvolvimento front-end, especialmente manipulação do DOM com JavaScript, eventos, estrutura de estilo com CSS e organização de arquivos para um projeto simples.<br><br>
 
 
 ## Inserir tarefa
-![Inserir](https://raw.githubusercontent.com/xLeywin/Assets/main/todo-list/inserir-ezgif.com-video-to-gif-converter.gif)<br>
+![Inserir](https://raw.githubusercontent.com/xLeywin/Assets/main/todo-list/input.gif)<br>
 
-## Concluir e excluir tarefa
-![Concluir e Excluir](https://raw.githubusercontent.com/xLeywin/Assets/main/todo-list/concluir-excluir-ezgif.com-video-to-gif-converter.gif)
+## Concluir tarefa
+![Concluir](https://raw.githubusercontent.com/xLeywin/Assets/main/todo-list/check.gif)<br>
+
+## Remover tarefa
+![Remover](https://raw.githubusercontent.com/xLeywin/Assets/main/todo-list/remove.gif)<br>
+
+## Salvamento local de dados
+![Save](https://raw.githubusercontent.com/xLeywin/Assets/main/todo-list/save1.gif)<br>
 
 # Tecnologias Utilizadas
 ## Frontend
