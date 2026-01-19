@@ -1,113 +1,149 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    margin:0;
+body {
+    margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #eeeeee;
+    background-color: #f4f6f8;
+    color: #333;
 }
 
-h1{
+/* Título */
+h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin: 30px 0;
 }
 
-header{
+/* Área de input */
+p {
     display: flex;
-    flex-flow: row wrap;
     width: 90%;
-    /*border: 1px solid;*/
-    margin: auto auto;
-    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-input{
-    height: 120px;
-    font-size: 2rem;
-    width: 80%;
-    padding-left: 10%;
+/* Input */
+input {
+    flex: 1;
+    height: 80px;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    outline: none;
 }
 
-button.btn-add{
-    width: 20%;
+input:focus {
+    border-color: #2ecc71;
+}
+
+/* Botão adicionar */
+button.btn-add-task {
+    width: 180px;
+    height: 80px;
     cursor: pointer;
-    background: green;
+    background: #2ecc71;
     color: white;
+    font-size: 1.1rem;
     font-weight: bold;
     border: none;
-    height: 120px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 0 10px 10px 0;
+    transition: background 0.2s ease;
 }
 
-main{
+button.btn-add-task:hover {
+    background: #27ae60;
+}
+
+/* Lista */
+main {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     width: 90%;
-    margin: auto auto;
-    padding-top: 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    gap: 15px;
 }
 
-.item{
+/* Item */
+.item {
     display: flex;
     align-items: center;
     background-color: white;
-    height: 80px;
-    width: 100%;
-    box-shadow: 0 0 20px #ccc;
-    margin-bottom: 3%;
+    height: 70px;
+    border-radius: 10px;
+    max-width: calc(100% - 20px);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.item.clicked{
-    background: #d4f6d9;
+.item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
-.item.clicked .item-name{
+/* Item concluído */
+.item.clicked {
+    background: #e8f7ee;
+}
+
+.item.clicked .item-name {
     text-decoration: line-through;
-    color: gray;
+    color: #888;
 }
 
-.item-icon{
-    flex: 0 0 60px;
+/* Ícone */
+.item-icon {
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 26px;
 }
 
-.item-name{
-    flex: 55%;
-    /* border: 1px solid green; */
-    font-size: 20px;
-    font-weight: bold;
+/* Nome da task */
+.item-name {
+    flex: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.item-button{
-    flex: 25%;
-    /* border: 1px solid blue; */
+/* Botão */
+.item-button {
+    width: 140px;
+    height: 100%;
 }
 
-.delete{
+.delete {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;   
-    background: red;
+    gap: 6px;
+    background: #e74c3c;
     color: white;
     border: none;
-    height: 100%;
     width: 100%;
+    height: 100%;
     cursor: pointer;
-    padding: 10px;
-    height: 80px;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
 }
 
-.check_circle{
-    color: green;
+.delete:hover {
+    background: #c0392b;
+}
+
+/* Ícones */
+.check_circle {
+    color: #2ecc71;
 }
 
 .material-symbols-outlined {
     cursor: pointer;
-}
+}   
