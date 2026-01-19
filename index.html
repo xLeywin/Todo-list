@@ -14,40 +14,10 @@
         <h1>Lista de Tarefas</h1>
 
         <header>
-            <input id="inputTask" type="text" placeholder="Digite sua tarefa" />
-            <button class="add">Adicionar</button>
+            <input id="input-task" type="text" placeholder="Digite sua tarefa" />
+            <button class="btn-add" onclick="addTask()">Adicionar</button>
         </header>
-        <main id="listArea">
-            <div class="item">
-                <div class="item-icon">
-                    <span class="material-symbols-outlined">
-                        radio_button_unchecked
-                    </span>
-                </div>
-                <div class="item-name">teste</div>
-                <div class="item-button">
-                    <button class="delete">
-                        <span class="material-symbols-outlined"> delete </span>
-                        Deletar
-                    </button>
-                </div>
-            </div>
-            <div class="item clicked">
-                <div class="item-icon">
-                    <span class="material-symbols-outlined check_circle">
-                        check_circle
-                    </span>
-                </div>
-                <div class="item-name">teste 2</div>
-                <div class="item-button">
-                    <button class="delete">
-                        <span class="material-symbols-outlined"> delete </span>
-                        Deletar
-                    </button>
-                </div>
-            </div>
-        </main>
-
+        <main id="list-area"></main>
         <script src="js/control.js"></script>
     </body>
 </html>

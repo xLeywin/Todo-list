@@ -30,7 +30,7 @@ input{
     padding-left: 10%;
 }
 
-button.add{
+button.btn-add{
     width: 20%;
     cursor: pointer;
     background: green;
@@ -106,4 +106,8 @@ main{
 
 .check_circle{
     color: green;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
 }
