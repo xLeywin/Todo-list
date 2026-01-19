@@ -27,22 +27,26 @@ function clearInput(){
 
 /* CREATE TASK */
 function createTask(textInput) {
-    const li = createDiv(textInput);
+    const li = createLi(textInput, false);
     listArea.prepend(li);
-    saveTask();
+    saveTasks();
 }
 
-function createDiv(textInput) {
+// Create li (Default is unchecked)
+function createLi(text, completed = false) {
     const task = document.createElement("li");
     task.classList.add("item");
 
+    if (completed) task.classList.add("clicked");
+
     task.innerHTML = `
         <div class="item-icon">
-            <span class="material-symbols-outlined" onclick="toggleTask(this)">
-                radio_button_unchecked
+            <span class="material-symbols-outlined ${completed ? 'check_circle' : ''}"
+                  onclick="toggleTask(this)">
+                ${completed ? 'check_circle' : 'radio_button_unchecked'}
             </span>
         </div>  
-        <div class="item-name">${textInput}</div>
+        <div class="item-name">${text}</div>
         <div class="item-button">
             <button class="delete" onclick="deleteTask(this)">
                 <span class="material-symbols-outlined">delete</span>
@@ -79,7 +83,7 @@ function toggleTask(icon) {
         icon.classList.remove("check_circle");
     }
 
-    saveTask();
+    saveTasks();
 }
 
 
@@ -88,22 +92,41 @@ listArea.addEventListener("click", function (event) {
     if (event.target.closest(".delete")) {
         const item = event.target.closest(".item");
         item.remove();
-        saveTask();
+        saveTasks();
     }
 });
 
+
 /* SAVE IN MEMORY */
-function saveTask() {
-    const items = listArea.querySelectorAll(".item");
-    const tasks = [];
+function saveTasks() {
+    const tasks = listArea.querySelectorAll(".item");
+    const tasksList = [];
 
     // For each item it will save its value and the status (checked or not checked)
-    items.forEach(item => {
-        tasks.push({
+    tasks.forEach(item => {
+        tasksList.push({
             text: item.querySelector(".item-name").innerText,
             completed: item.classList.contains("clicked")
         });
     });
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasksList));
 }
+
+
+/* READ IN MEMORY */
+function addSavedTasks() {
+    const tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    for (let task of tasksList) {
+        const li = createLi(task.text, task.completed);
+
+        if (task.completed) {
+            listArea.appendChild(li);
+        } else {
+            listArea.prepend(li);
+        }
+    }
+}
+
+addSavedTasks();
